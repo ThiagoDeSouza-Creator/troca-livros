@@ -244,3 +244,27 @@ p{
     font-size: 16px;
     font-weight: 400;
 }
+
+/* Seção como Funciona */
+
+.ajuda{
+    background: linear-gradient(#FFF,#2a8f8f,#043e64);
+    padding: 60px 20px;
+}
+
+.ajuda h2{
+    color: var(--amarelo-claro);
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 35px;
+}
+
+.todos-passos{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.numero-passo{
+    color: var(--amarelo-claro);
+}
