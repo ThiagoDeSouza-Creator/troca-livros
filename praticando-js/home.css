@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family:monospace;
 }
 
 body{
@@ -16,7 +16,7 @@ main{
 }
 
 h2{
-    background-color: rgb(243, 132, 81);
+    background-color: rgba(235, 9, 9, 0.767);
     border-radius: 5px;
     font-size: 18px;
     font-weight: 400;
@@ -30,7 +30,8 @@ input{
 #caixa{
     width: 300px;
     height: 200px;
-    background-color: rgb(238, 223, 13);
+    background-color:antiquewhite;
+    box-shadow: 0 0 20px rgb(218, 126, 7);
     margin: 20px auto;
 }
 
@@ -39,3 +40,22 @@ input{
     margin-right: 10px;
 }
 
+.area_add_sub{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.area_add_sub button{
+    padding: 5px;
+    background-color: antiquewhite;
+    border: 1px solid rgb(218, 126, 7);
+    color: #FFF;
+    border-radius: 5px;
+}
+
+.area_add_sub button:hover{
+    background-color: rgb(218, 126, 7);
+
+}
