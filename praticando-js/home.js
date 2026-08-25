@@ -3,15 +3,15 @@ const nomeEntrada = document.getElementById("nome-entrada");
 const nomeSaida = document.getElementById("nome-saida");
 const btntroca = document.getElementById("btn-troca");
 
-btntroca.addEventListener( 'click', () => {
+btntroca.addEventListener('click', () => {
     nomeSaida.textContent = nomeEntrada.value;
 });
 
-btntroca.addEventListener( 'mouseenter', () => {
+btntroca.addEventListener('mouseenter', () => {
     nomeSaida.style.color = "#0026fd";
 });
 
-btntroca.addEventListener( 'mouseout', () => {
+btntroca.addEventListener('mouseout', () => {
     nomeSaida.style.color = "#000";
 });
 
@@ -23,31 +23,31 @@ const btnAmarelo = document.getElementById("btn-amarelo");
 const btnAzul = document.getElementById("btn-azul");
 const caixa = document.getElementById("caixa");
 
-btnVerde.addEventListener( 'click', () => {
+btnVerde.addEventListener('click', () => {
     caixa.style.backgroundColor = "green";
 });
 
-btnAmarelo.addEventListener( 'click', () => {
+btnAmarelo.addEventListener('click', () => {
     caixa.style.backgroundColor = "yellow";
 });
 
-btnAzul.addEventListener( 'click', () => {
+btnAzul.addEventListener('click', () => {
     caixa.style.backgroundColor = "blue";
 });
 
- /// Simulando adição e subtração de valor ///
+/// Simulando adição e subtração de valor ///
 const valorReal = document.getElementById("valor_real");
 let contador = 0;
 
-document.getElementById("btn_menos").addEventListener( 'click', () => {
-    if( contador > 0){
-    contador --;
-    valorReal.textContent = contador;
+document.getElementById("btn_menos").addEventListener('click', () => {
+    if (contador > 0) {
+        contador--;
+        valorReal.textContent = contador;
     }
 });
 
-document.getElementById("btn_mais").addEventListener( 'click', () => {
-    contador ++;
+document.getElementById("btn_mais").addEventListener('click', () => {
+    contador++;
     valorReal.textContent = contador;
 });
 
@@ -55,11 +55,26 @@ document.getElementById("btn_mais").addEventListener( 'click', () => {
 
 const nomeLivro = document.getElementById("nome_livro");
 const lista_livros = document.getElementById("lista_livros");
- 
+
 document.getElementById("adiciona_livro").addEventListener('click',
-     () => {
+    () => {
         const novoLivro = document.createElement("li")
         novoLivro.textContent = nomeLivro.value;
-        lista_livros.appendChild(novoLivro)
- 
-     });
+       
+        const novoButton = document.createElement("button");
+        novoButton.textContent = "X";
+        novoButton.style.marginLeft = "20px"
+
+        novoLivro.appendChild(novoButton);
+
+        lista_livros.appendChild(novoLivro);
+
+        novoButton.addEventListener( 'click', () => {
+            novoLivro.remove();
+        })
+
+});
+
+document.getElementById("apagar_livro").addEventListener('click', () => {
+    lista_livros.innerText = ""
+});
