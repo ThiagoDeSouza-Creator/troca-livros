@@ -87,7 +87,7 @@ button{
 }
 
 form label{
-    color: var(--azul-principal);
+    color: var(--branco);
     font-size: 18px;
     font-weight: 500;
 }

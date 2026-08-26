@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login.css">
+    <script defer src="/login.js"></script>
     <title>Área de Login</title>
     <title>Login</title>
 </head>
@@ -12,7 +13,7 @@
     <main>
 
         <section class="sessao-imagem">
-            <img src="img/imagem-fundo.png" alt="Casal numa livraria" >
+            <img src="/img/imagem-fundo.png" alt="Casal numa livraria" >
         </section>
         
         <section class="sessao-login">
@@ -21,13 +22,13 @@
                 <h2> Troque livros, multiplique histórias</h2>
             </div>
 
-            <form action="#" method="post" id="form-login">
+            <form action="#" id="form-login">
 
                 <label for="email"> Usuário ou Email:</label>
-                <input type="text" id="email" placeholder="Informe seu email">
+                <input type="email" id="email" placeholder="Informe seu email">
 
                 <label for="senha"> Senha:</label>
-                <input type="text" id="senha" placeholder="Informe sua senha">
+                <input type="password" id="senha" placeholder="Informe sua senha">
 
                 <div class="links-senha">
                     <input type="checkbox" id="lembrar-senha">
@@ -36,7 +37,9 @@
                     <a href="#" id="link-esqueceu-senha"> Esqueceu senha? </a>
                 </div>
 
-                <button id="btn-acessar" > Acessar </button>
+                <label id="msg-login"></label>
+
+                <button type="button" id="btn-acessar" > Acessar </button>
                 <a href="cadastro.html" id="nao-possui-conta"> Ainda não pussuo uma conta</a>
                 
             </form>
