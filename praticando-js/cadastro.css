@@ -1,0 +1,6 @@
+@import url(login.css);
+
+.area-senha{
+    display: flex;
+    gap: 10px;
+}

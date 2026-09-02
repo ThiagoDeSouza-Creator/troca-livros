@@ -1,26 +1,25 @@
 
 const nomeEntrada = document.getElementById("nome-entrada");
 const nomeSaida = document.getElementById("nome-saida");
-const btntroca = document.getElementById("btn-troca");
+const btnTroca = document.getElementById("btn-troca");
 
-btntroca.addEventListener('click', () => {
+btnTroca.addEventListener( 'click', () => {
     nomeSaida.textContent = nomeEntrada.value;
 });
 
-btntroca.addEventListener('mouseenter', () => {
-    nomeSaida.style.color = "#0026fd";
+btnTroca.addEventListener( 'mouseenter', function(){
+    nomeSaida.style.color = "#47893a";
 });
 
-btntroca.addEventListener('mouseout', () => {
-    nomeSaida.style.color = "#000";
+btnTroca.addEventListener( 'mouseout', () => {
+    nomeSaida.style.color = "#000000";
 });
 
-// Trocandoa a cor da caixa
+// Trocando a cor da caixa
 
-
-const btnVerde = document.getElementById("btn-verde");
-const btnAmarelo = document.getElementById("btn-amarelo");
-const btnAzul = document.getElementById("btn-azul");
+const btnVerde = document.getElementById("btn_verde"); 
+const btnAmarelo = document.getElementById("btn_amarelo"); 
+const btnAzul = document.getElementById("btn_azul"); 
 const caixa = document.getElementById("caixa");
 
 btnVerde.addEventListener('click', () => {
@@ -34,47 +33,51 @@ btnAmarelo.addEventListener('click', () => {
 btnAzul.addEventListener('click', () => {
     caixa.style.backgroundColor = "blue";
 });
-
-/// Simulando adição e subtração de valor ///
+ 
+// Simulando adição e subtraçao de valor
 const valorReal = document.getElementById("valor_real");
 let contador = 0;
 
-document.getElementById("btn_menos").addEventListener('click', () => {
-    if (contador > 0) {
+document.getElementById("btn_menos").addEventListener( 'click', () => {
+    if( contador > 0){
         contador--;
         valorReal.textContent = contador;
     }
 });
 
-document.getElementById("btn_mais").addEventListener('click', () => {
+document.getElementById("btn_mais").addEventListener( 'click', () => {
     contador++;
     valorReal.textContent = contador;
 });
 
-// Adicionando Livros //
+// Adicionando Livros
 
 const nomeLivro = document.getElementById("nome_livro");
-const lista_livros = document.getElementById("lista_livros");
+const listaLivros = document.getElementById("lista_livros")
 
-document.getElementById("adiciona_livro").addEventListener('click',
-    () => {
-        const novoLivro = document.createElement("li")
-        novoLivro.textContent = nomeLivro.value;
-       
-        const novoButton = document.createElement("button");
-        novoButton.textContent = "X";
-        novoButton.style.marginLeft = "20px"
+document.getElementById("adiciona_livro").addEventListener('click', ()=>{
+    
+    const novoLivro = document.createElement("li");
+    novoLivro.textContent = nomeLivro.value;
+   
+    const novoButtton = document.createElement("button");
+    novoButtton.classList.add("btn_x");
+    novoButtton.textContent = "X"; 
+    novoButtton.style.marginLeft = "20px";
+    novoLivro.appendChild(novoButtton);
 
-        novoLivro.appendChild(novoButton);
+    listaLivros.appendChild(novoLivro);
 
-        lista_livros.appendChild(novoLivro);
+    novoButtton.addEventListener( 'click', () => {
+        novoLivro.remove();
+    })
 
-        novoButton.addEventListener( 'click', () => {
-            novoLivro.remove();
-        })
+    nomeLivro.value = "";
 
 });
 
-document.getElementById("apagar_livro").addEventListener('click', () => {
-    lista_livros.innerText = ""
+
+document.getElementById("remover_livro").addEventListener('click', ()=>{
+    listaLivros.innerHTML = "";
 });
+
